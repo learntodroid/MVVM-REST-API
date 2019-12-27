@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.learntodroid.mvvmrestapi.apis.BookSearchService;
-import com.learntodroid.mvvmrestapi.apis.VolumesResponse;
+import com.learntodroid.mvvmrestapi.models.VolumesResponse;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -21,8 +21,6 @@ public class BookRepository {
     private MutableLiveData<VolumesResponse> volumesResponseLiveData;
 
     public BookRepository() {
-        Log.i(BookRepository.class.getSimpleName(), "constructor");
-
         volumesResponseLiveData = new MutableLiveData<>();
 
         // add a http logging interceptor to help debugging
@@ -40,7 +38,6 @@ public class BookRepository {
     }
 
     public void searchVolumes(String keyword, String author, String apiKey) {
-        Log.i(BookRepository.class.getSimpleName(), "searchVolumes");
         bookSearchService.searchVolumes(keyword, author, apiKey)
                 .enqueue(new Callback<VolumesResponse>() {
                     @Override

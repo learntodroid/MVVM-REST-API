@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/book_item_smallThumbnail"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="100dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/book_item_rightLayout"/>
@@ -23,8 +23,8 @@
             android:id="@+id/book_item_rightLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
             android:orientation="vertical"
+            android:layout_margin="4dp"
             app:layout_constraintEnd_toEndOf="@+id/book_item_smallThumbnail"
             app:layout_constraintTop_toTopOf="parent">
 

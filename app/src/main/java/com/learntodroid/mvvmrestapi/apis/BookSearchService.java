@@ -1,8 +1,6 @@
 package com.learntodroid.mvvmrestapi.apis;
 
-import com.learntodroid.mvvmrestapi.models.Volume;
-
-import java.util.List;
+import com.learntodroid.mvvmrestapi.models.VolumesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

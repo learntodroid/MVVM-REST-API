@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.learntodroid.mvvmrestapi.R;
 import com.learntodroid.mvvmrestapi.adapters.BookSearchResultsAdapter;
-import com.learntodroid.mvvmrestapi.apis.VolumesResponse;
+import com.learntodroid.mvvmrestapi.models.VolumesResponse;
 import com.learntodroid.mvvmrestapi.viewmodels.BookSearchViewModel;
 
 public class BookSearchFragment extends Fragment {

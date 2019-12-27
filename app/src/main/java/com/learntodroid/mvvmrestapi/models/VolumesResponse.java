@@ -1,8 +1,7 @@
-package com.learntodroid.mvvmrestapi.apis;
+package com.learntodroid.mvvmrestapi.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.learntodroid.mvvmrestapi.models.Volume;
 
 import java.util.List;
 
