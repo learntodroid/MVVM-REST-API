@@ -42,7 +42,6 @@ public class BookRepository {
                 .enqueue(new Callback<VolumesResponse>() {
                     @Override
                     public void onResponse(Call<VolumesResponse> call, Response<VolumesResponse> response) {
-                        Log.i(BookRepository.class.getSimpleName(), response.message());
                         if (response.body() != null) {
                             volumesResponseLiveData.postValue(response.body());
                         }
@@ -50,7 +49,6 @@ public class BookRepository {
 
                     @Override
                     public void onFailure(Call<VolumesResponse> call, Throwable t) {
-                        Log.i(BookRepository.class.getSimpleName(), t.getMessage());
                         volumesResponseLiveData.postValue(null);
                     }
                 });
