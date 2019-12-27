@@ -1,19 +1,24 @@
 package com.learntodroid.mvvmrestapi.viewmodels;
 
+import android.app.Application;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.learntodroid.mvvmrestapi.apis.VolumesResponse;
 import com.learntodroid.mvvmrestapi.repositories.BookRepository;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-public class BookSearchViewModel extends ViewModel {
+public class BookSearchViewModel extends AndroidViewModel {
     private BookRepository bookRepository;
     private LiveData<VolumesResponse> volumesResponseLiveData;
+
+    public BookSearchViewModel(@NonNull Application application) {
+        super(application);
+    }
 
     public void init() {
         Log.i(BookSearchViewModel.class.getSimpleName(), "init");
