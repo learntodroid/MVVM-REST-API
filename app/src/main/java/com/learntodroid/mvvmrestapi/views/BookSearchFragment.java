@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.learntodroid.mvvmrestapi.R;
 import com.learntodroid.mvvmrestapi.adapters.BookSearchResultsAdapter;
 import com.learntodroid.mvvmrestapi.apis.VolumesResponse;
@@ -21,6 +23,9 @@ import com.learntodroid.mvvmrestapi.viewmodels.BookSearchViewModel;
 public class BookSearchFragment extends Fragment {
     private BookSearchViewModel viewModel;
     private BookSearchResultsAdapter adapter;
+
+    private TextInputEditText keywordEditText, authorEditText;
+    private Button searchButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,7 +38,9 @@ public class BookSearchFragment extends Fragment {
         viewModel.getVolumesResponseLiveData().observe(this, new Observer<VolumesResponse>() {
             @Override
             public void onChanged(VolumesResponse volumesResponse) {
-                adapter.setResults(volumesResponse.getItems());
+                if (volumesResponse != null) {
+                    adapter.setResults(volumesResponse.getItems());
+                }
             }
         });
     }
@@ -47,6 +54,24 @@ public class BookSearchFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
+        keywordEditText = view.findViewById(R.id.fragment_booksearch_keyword);
+        authorEditText = view.findViewById(R.id.fragment_booksearch_author);
+        searchButton = view.findViewById(R.id.fragment_booksearch_search);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performSearch();
+            }
+        });
+
         return view;
+    }
+
+    public void performSearch() {
+        String keyword = keywordEditText.getEditableText().toString();
+        String author = authorEditText.getEditableText().toString();
+
+        viewModel.searchVolumes(keyword, author);
     }
 }

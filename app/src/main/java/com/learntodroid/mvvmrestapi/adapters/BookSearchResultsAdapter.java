@@ -31,8 +31,6 @@ public class BookSearchResultsAdapter extends RecyclerView.Adapter<BookSearchRes
     public void onBindViewHolder(@NonNull BookSearchResultHolder holder, int position) {
         Volume volume = results.get(position);
 
-
-
         holder.titleTextView.setText(volume.getVolumeInfo().getTitle());
         holder.publishedDateTextView.setText(volume.getVolumeInfo().getPublishedDate());
         holder.smallThumbnailTextView.setText(volume.getVolumeInfo().getImageLinks().getSmallThumbnail());

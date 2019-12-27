@@ -3,6 +3,7 @@ package com.learntodroid.mvvmrestapi.viewmodels;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.learntodroid.mvvmrestapi.apis.VolumesResponse;
@@ -17,13 +18,13 @@ public class BookSearchViewModel extends ViewModel {
     public void init() {
         Log.i(BookSearchViewModel.class.getSimpleName(), "init");
         bookRepository = new BookRepository();
-        searchVolumes("", "", "");
+        volumesResponseLiveData = bookRepository.getVolumesResponseLiveData();
     }
 
-    public void searchVolumes(String keyword, String author, String apiKey) {
+    public void searchVolumes(String keyword, String author) {
         Log.i(BookSearchViewModel.class.getSimpleName(), "searchVolumes");
         Dotenv dotenv = Dotenv.configure().directory("/assets").filename("env").load();
-        volumesResponseLiveData = bookRepository.searchVolumes("Stoic", "Seneca", dotenv.get("GOOGLE_API_KEY"));
+        bookRepository.searchVolumes(keyword, author, dotenv.get("GOOGLE_API_KEY"));
     }
 
     public LiveData<VolumesResponse> getVolumesResponseLiveData() {
