@@ -1,9 +1,16 @@
 package com.learntodroid.mvvmrestapi.models;
 
-public class VolumeImageLinks {
-    String smallThumbnail;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-    String thumbnail;
+public class VolumeImageLinks {
+    @SerializedName("smallThumbnail")
+    @Expose
+    private String smallThumbnail;
+
+    @SerializedName("thumbnail")
+    @Expose
+    private String thumbnail;
 
     public String getSmallThumbnail() {
         return smallThumbnail;

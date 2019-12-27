@@ -1,23 +1,42 @@
 package com.learntodroid.mvvmrestapi.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class VolumeInfo {
-    String title;
+    @SerializedName("title")
+    @Expose
+    private String title;
 
-    List<String> authors = null;
+    @SerializedName("authors")
+    @Expose
+    private List<String> authors = null;
 
-    String publisher;
+    @SerializedName("publisher")
+    @Expose
+    private String publisher;
 
-    String publishedDate;
+    @SerializedName("publishedDate")
+    @Expose
+    private String publishedDate;
 
-    String description;
+    @SerializedName("description")
+    @Expose
+    private String description;
 
-    int pageCount;
+    @SerializedName("pageCount")
+    @Expose
+    private int pageCount;
 
-    String printType;
+    @SerializedName("printType")
+    @Expose
+    private String printType;
 
-    VolumeImageLinks imageLinks;
+    @SerializedName("imageLinks")
+    @Expose
+    private VolumeImageLinks imageLinks;
 
     public String getTitle() {
         return title;

@@ -1,14 +1,27 @@
 package com.learntodroid.mvvmrestapi.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Volume {
-    String kind;
+    @SerializedName("kind")
+    @Expose
+    private String kind;
 
-    String id;
+    @SerializedName("id")
+    @Expose
+    private String id;
 
-    String etag;
+    @SerializedName("etag")
+    @Expose
+    private String etag;
 
-    String selfLink;
+    @SerializedName("selfLink")
+    @Expose
+    private String selfLink;
 
+    @SerializedName("volumeInfo")
+    @Expose
     VolumeInfo volumeInfo;
 
     public String getKind() {
