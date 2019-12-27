@@ -16,16 +16,16 @@ import retrofit2.Response;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BookRepository {
-    private BookSearchService bookSearchService;
     private static final String BOOK_SEARCH_SERVICE_BASE_URL = "https://www.googleapis.com/";
+
+    private BookSearchService bookSearchService;
     private MutableLiveData<VolumesResponse> volumesResponseLiveData;
 
     public BookRepository() {
         volumesResponseLiveData = new MutableLiveData<>();
 
-        // add a http logging interceptor to help debugging
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        interceptor.level(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         bookSearchService = new retrofit2.Retrofit.Builder()
