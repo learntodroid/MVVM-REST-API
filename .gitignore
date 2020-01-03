@@ -13,4 +13,7 @@
 .externalNativeBuild
 .cxx
 /app/src/main/assets/env
-
+/app/debug
+/app/release
+keystore.properties
+google-services.json
