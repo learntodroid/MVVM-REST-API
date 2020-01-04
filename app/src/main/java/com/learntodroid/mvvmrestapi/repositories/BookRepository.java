@@ -37,8 +37,8 @@ public class BookRepository {
 
     }
 
-    public void searchVolumes(String keyword, String author, String apiKey) {
-        bookSearchService.searchVolumes(keyword, author, apiKey)
+    public void searchVolumes(String keyword, String author) {
+        bookSearchService.searchVolumes(keyword, author)
                 .enqueue(new Callback<VolumesResponse>() {
                     @Override
                     public void onResponse(Call<VolumesResponse> call, Response<VolumesResponse> response) {

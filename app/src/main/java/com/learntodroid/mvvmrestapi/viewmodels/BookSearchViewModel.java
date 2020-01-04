@@ -9,8 +9,6 @@ import androidx.lifecycle.LiveData;
 import com.learntodroid.mvvmrestapi.models.VolumesResponse;
 import com.learntodroid.mvvmrestapi.repositories.BookRepository;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
 public class BookSearchViewModel extends AndroidViewModel {
     private BookRepository bookRepository;
     private LiveData<VolumesResponse> volumesResponseLiveData;
@@ -25,8 +23,7 @@ public class BookSearchViewModel extends AndroidViewModel {
     }
 
     public void searchVolumes(String keyword, String author) {
-        Dotenv dotenv = Dotenv.configure().directory("/assets").filename("env").load();
-        bookRepository.searchVolumes(keyword, author, dotenv.get("GOOGLE_API_KEY"));
+        bookRepository.searchVolumes(keyword, author);
     }
 
     public LiveData<VolumesResponse> getVolumesResponseLiveData() {
