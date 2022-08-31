@@ -1,4 +1,4 @@
-package com.learntodroid.mvvmrestapi;
+package com.learntodroid.booksearchr;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.learntodroid.mvvmrestapi.models;
+package com.learntodroid.booksearchr.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

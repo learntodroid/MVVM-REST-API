@@ -1,12 +1,10 @@
-package com.learntodroid.mvvmrestapi.repositories;
-
-import android.util.Log;
+package com.learntodroid.booksearchr.repositories;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.learntodroid.mvvmrestapi.apis.BookSearchService;
-import com.learntodroid.mvvmrestapi.models.VolumesResponse;
+import com.learntodroid.booksearchr.apis.BookSearchService;
+import com.learntodroid.booksearchr.models.VolumesResponse;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

@@ -1,4 +1,4 @@
-package com.learntodroid.mvvmrestapi.adapters;
+package com.learntodroid.booksearchr.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.learntodroid.mvvmrestapi.R;
-import com.learntodroid.mvvmrestapi.models.Volume;
-import com.learntodroid.mvvmrestapi.util.Util;
+import com.learntodroid.booksearchr.R;
+import com.learntodroid.booksearchr.models.Volume;
+import com.learntodroid.booksearchr.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,10 @@
-package com.learntodroid.mvvmrestapi.views;
+package com.learntodroid.booksearchr.views;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.learntodroid.mvvmrestapi.R;
+import com.learntodroid.booksearchr.R;
 
 public class MainActivity extends AppCompatActivity {
 
